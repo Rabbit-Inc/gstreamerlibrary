@@ -1,0 +1,172 @@
+
+Release notes for GStreamer Good Plugins 1.11.1
+
+The GStreamer team is pleased to announce the first release of the unstable
+1.11 release series. The 1.11 release series is adding new features on top of
+the 1.0, 1.2, 1.4, 1.6, 1.8 and 1.10 series and is part of the API and ABI-stable 1.x release
+series of the GStreamer multimedia framework. The unstable 1.11 release series
+will lead to the stable 1.12 release series in the next weeks. Any newly added
+API can still change until that point.
+
+
+Full release notes will be provided at some point during the 1.11 release
+cycle, highlighting all the new features, bugfixes, performance optimizations
+and other important changes.
+
+
+Binaries for Android, iOS, Mac OS X and Windows will be provided in the next days.
+
+
+"Such ingratitude.  After all the times I've saved your life."
+
+
+A collection of plugins you'd want to have right next to you on the
+battlefield.  Shooting sharp and making no mistakes, these plugins have it
+all: good looks, good code, and good licensing.  Documented and dressed up
+in tests.  If you're looking for a role model to base your own plugin on,
+here it is.
+
+
+If you find a plot hole or a badly lip-synced line of code in them,
+let us know - it is a matter of honour for us to ensure Blondie doesn't look
+like he's been walking 100 miles through the desert without water.
+
+
+This module contains a set of plugins that we consider to have good quality
+  code, correct functionality, our preferred license (LGPL for the plugin
+  code, LGPL or LGPL-compatible for the supporting library).
+We believe distributors can safely ship these plugins.
+People writing elements should base their code on these elements.
+
+
+Other modules containing plugins are:
+
+
+gst-plugins-base
+contains a basic set of well-supported plugins
+gst-plugins-ugly
+contains a set of well-supported plugins, but might pose problems for
+    distributors
+gst-plugins-bad
+contains a set of less supported plugins that haven't passed the
+    rigorous quality testing we expect, or are still missing documentation
+    and/or unit tests
+gst-libav
+contains a set of codecs plugins based on libav (formerly gst-ffmpeg)
+
+
+
+  
+
+Bugs fixed in this release
+     
+      * 708221 : mp4dashmux: add the tfdt atom to the moof
+      * 746574 : matroskamux: add G722 audio support
+      * 748360 : rtspsrc: teardown usually never happens
+      * 749098 : matroskamux: drop streamheader buffers only if they really are headers
+      * 754696 : matroskamux: audio-only streams have all buffers flagged as delta units, causing problems with tcpserversink/multifdsink
+      * 757631 : progressreport format=bytes will not send msg
+      * 766991 : multifilesink: leaks memory when max-files property == 0
+      * 767771 : qtdemux/jpegdec: Interlaced content detected as progressive
+      * 768723 : rtprtx: test is sometimes failing
+      * 769041 : qtmux: Downscaling time value loses precision
+      * 769048 : qtmux: prores-related fixes
+      * 772181 : isomp4: Parse/store colorimetry, chroma-site and interlaced-mode/field-order
+      * 772740 : rtpbin: receiving RTP bundle support
+      * 773217 : qtmux: Allow configuring the maximum interleave size in bytes/time
+      * 773514 : rtph263pay: Use GST_TRACE for logging bitsream parsing
+      * 773712 : isomp4: Add support for FLAC
+      * 773785 : splitmuxsink: Use first buffer TS as mux start time
+      * 773828 : qtmux: Crash on EOS with GST_DEBUG enabled
+      * 774129 : 'gst_buffer_is_writable' assertion  in aacparse
+      * 774131 : flvmux: Add metadatacreator property
+      * 774403 : qtmux: Always write edit lists for the tracks to give a more accurate duration
+      * 774409 : tests/jitterbuffer: Major refactoring and cleanups
+      * 774566 : matroskaparse: error out on last buffer
+      * 774674 : qtdemux: Remove useless return variable
+      * 774747 : qtdemux: compiler warning with gcc 6.2
+      * 774789 : qtmux: Enable up to 16 unpositioned raw audio channels
+      * 774840 : qtmux: Fix various timestamp and duration related issues
+      * 774876 : meson: add libm to has_function checks
+      * 775287 : qtdemux: change off_t type to gint
+      * 775414 : qtdemux: Correctly read interlacing information
+      * 775702 : v4l2object: Don't set empty interlace-mode list
+      * 775752 : monoscope: Leaks allocation query
+      * 776030 : udpsrc: Add to join multiple multicast interfaces
+      * 776106 : v4l2object: Don't check size in a non-list value
+      * 776789 : avidemux: fix memory leak in usage of gst_pad_template_new() API
+      * 777095 : isomp4: Don't spam debug log with knonw/padding atoms
+      * 777157 : qtdemux: seqh buffer not freed after calling qtdemux_parse_svq3_stsd_data()
+
+==== Download ====
+
+You can find source releases of gst-plugins-good in the download
+directory: https://gstreamer.freedesktop.org/src/gst-plugins-good/
+
+The git repository and details how to clone it can be found at
+http://cgit.freedesktop.org/gstreamer/gst-plugins-good/
+
+==== Homepage ====
+
+The project's website is https://gstreamer.freedesktop.org/
+
+==== Support and Bugs ====
+
+We use GNOME's bugzilla for bug reports and feature requests:
+http://bugzilla.gnome.org/enter_bug.cgi?product=GStreamer
+
+Please submit patches via bugzilla as well.
+
+For help and support, please subscribe to and send questions to the
+gstreamer-devel mailing list (see below for details).
+
+There is also a #gstreamer IRC channel on the Freenode IRC network.
+
+==== Developers ====
+
+GStreamer is stored in Git, hosted at git.freedesktop.org, and can be cloned
+from there (see link above).
+
+Interested developers of the core library, plugins, and applications should
+subscribe to the gstreamer-devel list.
+
+        
+Contributors to this release
+    
+      * Aleix Conchillo Flaque
+      * Alejandro G. Castro
+      * Andre McCurdy
+      * Arun Raghavan
+      * David Evans
+      * Edward Hervey
+      * Enrique Ocaña González
+      * Garima Gaur
+      * Havard Graff
+      * Heekyoung Seo
+      * Jagadish
+      * Jan Schmidt
+      * Mark Nauwelaerts
+      * Matt Staples
+      * Matthew Waters
+      * Nicola Murino
+      * Nirbheek Chauhan
+      * Petr Kulhavy
+      * Philipp Zabel
+      * Philippe Normand
+      * Reynaldo H. Verdejo Pinochet
+      * Scott D Phillips
+      * Sean DuBois
+      * Sebastian Dröge
+      * Seungha Yang
+      * Stian Selnes
+      * Thibault Saunier
+      * Tim-Philipp Müller
+      * Ursula Maplehurst
+      * Vincent Penquerc'h
+      * Vinod Kesti
+      * Vivia Nikolaidou
+      * Víctor Manuel Jáquez Leal
+      * William Manley
+      * Wonchul Lee
+      * christophecvr
+ 
