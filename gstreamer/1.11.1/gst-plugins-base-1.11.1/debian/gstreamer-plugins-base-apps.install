@@ -1,0 +1,2 @@
+debian/tmp/usr/bin/gst-discoverer-@GST_ABI@
+debian/tmp/usr/bin/gst-play-@GST_ABI@

@@ -1,0 +1,1 @@
+Run 'dpkg-buildpackage -b -uc' in each of the subdirectories to create .deb packages
